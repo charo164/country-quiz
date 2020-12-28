@@ -22,6 +22,10 @@ main {
   bottom: 0;
   color: #ffffff;
   font-size: 14px;
+  a{
+    color: #ffffff;
+    margin-right: 2px
+  }
 }
 .container {
   display: flex;
@@ -34,13 +38,13 @@ main {
   .loader,
   .loader:before,
   .loader:after {
-    background: #ffffff;
+    background: #d2d2d2;
     animation: load 1s infinite ease-in-out;
     width: 1em;
     height: 4em;
   }
   .loader {
-    color: #ffffff;
+    color: #d2d2d2;
     text-indent: -9999em;
     margin: 88px auto;
     position: relative;

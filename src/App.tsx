@@ -27,7 +27,7 @@ export default function App() {
   return (
     <main>
       <div className="container">{container}</div>
-      <div className="author">Jules Jacques Coly @ DevChallenges.io</div>
+      <div className="author"><a rel="noreferrer" href="https://github.com/charo164" target="_blank">Jules Jacques Coly</a>@ DevChallenges.io</div>
     </main>
   );
 }
