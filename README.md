@@ -28,7 +28,7 @@
 - [How to use](#how-to-use)
 
 ## Overview
-![screenshot](./src/img/preview.webm)
+![screenshot](./src/img/overview.png)
 
 ### Built With
 
