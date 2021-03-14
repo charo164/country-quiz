@@ -11,12 +11,12 @@ export default function Quiz({
   fourCountries,
   type,
   country,
-  randomFilter,
+  selectCountries,
 }) {
-  const [checked, setChecked] = useState<boolean>(false);
-  const [trial, setTrial] = useState<number>(3);
-  const [correctAnswer, setCorrectAnswer] = useState<number>(0);
-  const [end, setEnd] = useState<boolean>(false);
+  const [checked, setChecked] = useState(false);
+  const [trial, setTrial] = useState(3);
+  const [correctAnswer, setCorrectAnswer] = useState(0);
+  const [end, setEnd] = useState(false);
   const [positiveSound] = useSound(positive);
   const [negativeSound] = useSound(negative);
   const [winnerSound] = useSound(winner);
@@ -62,7 +62,6 @@ export default function Quiz({
       setChecked(true);
     }
   };
-  //moves on to the next question
   const next = () => {
     const p = document.querySelectorAll(".noHover");
     p.forEach((f) => {
@@ -79,11 +78,11 @@ export default function Quiz({
         ic.classList.remove("incorrectAnswer");
       }
       setChecked(false);
-      randomFilter(countries);
+      selectCountries(countries);
     } else {
       setEnd(true);
       setChecked(false);
-      randomFilter(countries);
+      selectCountries(countries);
       winnerSound();
     }
   };

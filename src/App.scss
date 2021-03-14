@@ -6,6 +6,10 @@
   box-sizing: border-box;
   font-family: "Poppins", Verdana, sans-serif;
 }
+body,
+main {
+  background-color: #5256a1;
+}
 main {
   display: flex;
   flex-direction: column;
