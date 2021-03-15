@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
-@import "./components/quiz/Quiz.scss";
+@import "./styles/Quiz.scss";
+@import "./styles/loader.scss";
+@import "./styles/error.scss";
 * {
   margin: 0;
   padding: 0;
@@ -7,20 +9,25 @@
   font-family: "Poppins", Verdana, sans-serif;
 }
 body,
-main {
-  background-color: #5256a1;
-}
+#root,
 main {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: #5256a1;
+  width: 100%;
+}
+main {
+  flex-direction: column;
   background-image: url(./img/background.png);
   background-repeat: no-repeat;
   background-size: 1440px;
   background-position: center;
+  @include Quiz;
 }
+@include Error;
+@include Loader;
 .myGithub {
   position: absolute;
   top: 5px;
@@ -68,5 +75,41 @@ h1 {
   }
   .author {
     font-size: 12px;
+  }
+}
+
+@keyframes listAnim {
+  0% {
+    opacity: 0;
+    top: 100px;
+  }
+  75% {
+    opacity: 0.5;
+    top: 0px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes ImgAnim {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  75% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

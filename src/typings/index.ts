@@ -1,9 +1,11 @@
-type fourNumb = {
+import { Dispatch } from "react";
+
+interface fourNumb {
   numb1: number;
   numb2: number;
   numb3: number;
   numb4: number;
-};
+}
 
 interface Currency {
   code: string;
@@ -34,8 +36,8 @@ interface Translations {
 interface RegionalBloc {
   acronym: string;
   name: string;
-  otherAcronyms: any[];
-  otherNames: any[];
+  otherAcronyms: string[];
+  otherNames: string[];
 }
 
 interface countryType {
@@ -65,4 +67,30 @@ interface countryType {
   cioc: string;
 }
 
-export type { fourNumb, countryType };
+interface stateType {
+  countries: countryType[];
+  fourCountries: countryType[];
+  type: boolean;
+  country: countryType | null;
+  checked: boolean;
+  trial: number;
+  correctAnswer: number;
+  end: boolean;
+  positiveSound: HTMLAudioElement;
+  negativeSound: HTMLAudioElement;
+  winSound: HTMLAudioElement;
+}
+
+interface appContextType {
+  state: stateType;
+  dispatch: Dispatch<actionType>;
+}
+interface actionType {
+  type: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  value: any;
+}
+
+type reducerType = (state: stateType, action: actionType) => stateType;
+
+export type { fourNumb, countryType, stateType, appContextType, reducerType, actionType };

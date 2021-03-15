@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import undraw_winners from "../../img/undraw_winners_ao2o2.svg";
+import { tryAgain } from "../../lib";
+import { AppContext } from "../../reducer/provider";
 
-export default function Results({ correctAnswer, tryAgain }) {
+const Results: React.FC = () => {
+  const app = useContext(AppContext);
   return (
     <>
       <span className="undraw_winnersC">
@@ -13,11 +16,18 @@ export default function Results({ correctAnswer, tryAgain }) {
       </span>
       <h2 className="resultText">Results</h2>
       <p className="result">
-        You got <b> {correctAnswer} </b> correct answers
+        You got <b> {app?.state.correctAnswer} </b> correct answers
       </p>
-      <button className="tryAgain" onClick={tryAgain}>
+      <button
+        className="tryAgain"
+        onClick={() => {
+          if (app) tryAgain(app);
+        }}
+      >
         Try again
       </button>
     </>
   );
-}
+};
+
+export default Results;
