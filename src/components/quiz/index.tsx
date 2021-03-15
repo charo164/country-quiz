@@ -9,6 +9,7 @@ const Quiz: React.FC = () => {
     app?.state.positiveSound?.load();
     app?.state.negativeSound?.load();
     app?.state.winSound?.load();
+    // eslint-disable-next-line
   }, []);
 
   return app?.state.end ? <Results /> : <Question />;

@@ -22,6 +22,7 @@ const App: React.FC = () => {
         setIsLoading(false);
         topbar.hide();
       }); 
+      // eslint-disable-next-line
   }, []); 
 
   let content;
