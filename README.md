@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://country-quiz-tawny.vercel.app">
+    <a href="https://charo164.github.io/country-quiz/">
       Demo
     </a>
     <span> | </span>
