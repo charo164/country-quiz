@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Poppins', Verdana, sans-serif;
+}
+
+:root {
+  --success: #60bf88;
+  --danger: #ea8282;
+  --orange: #f9a826;
+  --white: #fff;
+}
+
+.incorrectAnswer {
+  background-color: var(--danger);
+  color: var(--white);
+  border: 0;
+  box-shadow: none;
+}
+
+.correctAnswer {
+  background-color: var(--success);
+  color: var(--white);
+  border: 0;
+  box-shadow: none;
+}
+.hover:hover {
+  background-color: var(--orange);
+  color: var(--white);
+  border: 0;
+  box-shadow: none;
+}
